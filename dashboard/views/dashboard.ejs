@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Welcome <%= user.username %></h1>
+
+<h2>Your Servers</h2>
+
+<% guilds.forEach(g => { %>
+  <div class="card">
+    <a href="/guild/<%= g.id %>"><%= g.name %></a>
+  </div>
+<% }) %>
+
+<a href="/logout">Logout</a>
+</body>
+</html><script src="/socket.io/socket.io.js"></script>
+<script src="/socket.js"></script>

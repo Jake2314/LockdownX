@@ -1,0 +1,28 @@
+<form method="POST" action="/guild/<%= guild.id %>/save">
+
+  <label>
+    Anti Raid:
+    <input type="checkbox" name="antiRaidEnabled"
+      <%= config.antiRaidEnabled ? "checked" : "" %>>
+  </label>
+
+  <label>
+    Punishment:
+    <select name="punishment">
+      <option value="kick" <%= config.punishment === "kick" ? "selected" : "" %>>Kick</option>
+      <option value="ban" <%= config.punishment === "ban" ? "selected" : "" %>>Ban</option>
+    </select>
+  </label>
+
+  <label>
+    Min Account Age (days):
+    <input type="number" name="minAccountAge"
+      value="<%= config.minAccountAge %>">
+  </label>
+
+  <button type="submit">Save</button>
+
+</form><label>
+  <input type="checkbox" name="premium" <%= config.premium ? 'checked' : '' %> />
+  💎 Premium Enabled
+</label>

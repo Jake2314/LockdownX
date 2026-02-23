@@ -1,15 +1,15 @@
 const { Client, GatewayIntentBits } = require('discord.js');
+const GuildConfig = require('./dashboard/models/GuildConfig');
 
-function startBot() {
-    const client = new Client({
-        intents: [GatewayIntentBits.Guilds]
-    });
+const { Client, GatewayIntentBits } = require('discord.js');
 
-  client.once('clientReady', () => {
-        console.log(`🤖 Logged in as ${client.user.tag}`);
-    });
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers
+  ]
+});
 
-    client.login(process.env.TOKEN);
-}
+client.login(process.env.TOKEN);
 
-module.exports = startBot;
+module.exports = client;
